@@ -266,6 +266,7 @@ h3 { font-size: 24px; line-height: 1.3; }
 .contact-form textarea { resize: vertical; }
 .contact-form label.checkbox { flex-direction: row; align-items: center; gap: 10px; font-weight: 400; font-size: 15px; }
 .contact-form label.checkbox input { width: 18px; height: 18px; padding: 0; accent-color: #000; }
+.contact-form label[hidden] { display: none; }
 .contact-form .btn { align-self: flex-start; }
 .form-error { color: #9b2c2c; font-size: 15px; }
 

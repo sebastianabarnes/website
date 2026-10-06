@@ -6,7 +6,7 @@
    LIST_ID:    Klaviyo → Lists & segments → your newsletter list → the ID in the URL
    ----------------------------------------------------------------------- */
 const KLAVIYO = {
-  PUBLIC_KEY: '',   // e.g. 'AbC123'
+  PUBLIC_KEY: 'TdbedK',
   LIST_ID: '',      // e.g. 'XyZ789'
   REVISION: '2024-10-15',
   CONTACT_METRIC: 'Contact Form Submitted',
@@ -48,6 +48,12 @@ document.getElementById('year').textContent = new Date().getFullYear();
   const errorEl = form.querySelector('.form-error');
   const submitBtn = form.querySelector('button[type="submit"]');
   const loadedAt = Date.now();
+
+  // Hide the newsletter opt-in until a Klaviyo list is configured.
+  if (!KLAVIYO.LIST_ID) {
+    const opt = form.newsletter && form.newsletter.closest('label');
+    if (opt) opt.hidden = true;
+  }
 
   function showSuccess() {
     form.hidden = true;
