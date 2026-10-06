@@ -208,7 +208,7 @@ h3 { font-size: 24px; line-height: 1.3; }
   gap: 72px;
   align-items: center;
 }
-.portrait { width: 100%; max-width: 480px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); box-shadow: 0 12px 32px rgba(40, 30, 20, 0.16); }
+.portrait { width: 100%; max-width: 480px; height: auto; border-radius: var(--radius); box-shadow: 0 12px 32px rgba(40, 30, 20, 0.16); }
 .portrait-placeholder {
   width: 100%;
   max-width: 480px;
