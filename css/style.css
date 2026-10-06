@@ -190,8 +190,8 @@ h3 { font-size: 24px; line-height: 1.3; }
 }
 .book-card img { width: 100%; height: auto; }
 .book-body { display: flex; flex-direction: column; align-items: center; flex: 1; padding: 36px 36px 40px; }
-.book-meta { margin-bottom: 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
-.book-body > p:not(.book-meta) { flex: 1; font-size: 17px; line-height: 1.7; color: var(--ink-4); max-width: 34ch; text-wrap: pretty; }
+.book-meta { margin-bottom: 28px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.book-body > p:not(.book-meta) { flex: 1; font-size: 16px; line-height: 1.7; color: var(--ink-4); max-width: 34ch; text-wrap: pretty; }
 
 
 /* ---------- Quote ---------- */
