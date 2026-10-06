@@ -7,7 +7,7 @@
    ----------------------------------------------------------------------- */
 const KLAVIYO = {
   PUBLIC_KEY: 'TdbedK',
-  LIST_ID: '',      // e.g. 'XyZ789'
+  LIST_ID: 'XRnPF2',
   REVISION: '2024-10-15',
   CONTACT_METRIC: 'Contact Form Submitted',
 };
