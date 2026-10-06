@@ -91,7 +91,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
     }
 
     if (!KLAVIYO.PUBLIC_KEY) {
-      showError('The contact form isn’t connected yet. Please email press@sebastianbarnes.com instead.');
+      showError('The contact form isn’t connected yet. Please check back soon.');
       console.warn('Klaviyo PUBLIC_KEY is not set in js/main.js');
       return;
     }
@@ -129,7 +129,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       showSuccess();
     } catch (err) {
       console.error(err);
-      showError('Something went wrong sending your message. Please try again, or email press@sebastianbarnes.com.');
+      showError('Something went wrong sending your message. Please try again in a moment.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send message';
