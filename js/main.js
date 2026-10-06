@@ -118,7 +118,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       await klaviyo('events', {
         type: 'event',
         attributes: {
-          properties: { Subject: form.subject.value, Message: form.message.value.trim() },
+          properties: { Message: form.message.value.trim() },
           metric: { data: { type: 'metric', attributes: { name: KLAVIYO.CONTACT_METRIC } } },
           profile: { data: profile },
         },
