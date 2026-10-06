@@ -162,8 +162,7 @@ h3 { font-size: 24px; line-height: 1.3; }
   /* Shown at the photo's natural portrait shape (no cropping). */
   width: auto;
   height: auto;
-  max-width: min(100%, 460px);
-  max-height: min(720px, calc(100vh - 190px));
+  max-width: min(100%, 520px);
   justify-self: center;
   border-radius: var(--radius);
   box-shadow: 0 12px 32px rgba(40, 30, 20, 0.16);
