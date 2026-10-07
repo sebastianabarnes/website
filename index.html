@@ -31,7 +31,7 @@
       <a href="#books">Book</a>
       <a href="#about">About</a>
       <!-- <a href="#events">Events</a> -->
-      <a href="#contact">Contact</a>
+      <a href="#newsletter">Newsletter</a>
     </nav>
   </div>
 </header>
@@ -109,7 +109,7 @@
             <p class="event-venue">The Gilded Page Books</p>
             <p class="event-detail">Your City, ST · Reading &amp; signing</p>
           </div>
-          <a href="#contact" class="btn btn-outline">Details</a>
+          <a href="#newsletter" class="btn btn-outline">Details</a>
         </li>
         <li class="event">
           <p class="event-date">Oct 22, 2026</p>
@@ -117,7 +117,7 @@
             <p class="event-venue">Lantern Lane Bookshop</p>
             <p class="event-detail">Your City, ST · In conversation</p>
           </div>
-          <a href="#contact" class="btn btn-outline">Details</a>
+          <a href="#newsletter" class="btn btn-outline">Details</a>
         </li>
         <li class="event">
           <p class="event-date">Nov 5, 2026</p>
@@ -125,7 +125,7 @@
             <p class="event-venue">The Quiet Shelf</p>
             <p class="event-detail">Your City, ST · Reading</p>
           </div>
-          <a href="#contact" class="btn btn-outline">Details</a>
+          <a href="#newsletter" class="btn btn-outline">Details</a>
         </li>
         <li class="event">
           <p class="event-date">Nov 19, 2026</p>
@@ -133,7 +133,7 @@
             <p class="event-venue">Harbor Street Books</p>
             <p class="event-detail">Your City, ST · Signing</p>
           </div>
-          <a href="#contact" class="btn btn-outline">Details</a>
+          <a href="#newsletter" class="btn btn-outline">Details</a>
         </li>
       </ul>
       <p class="past-events">Past events: Example Book Festival · Sample Literary Festival · Placeholder Book Fair</p>
@@ -141,35 +141,29 @@
   </section>
   -->
 
-  <!-- Contact -->
-  <section id="contact" class="section section-bordered">
+  <!-- Newsletter -->
+  <section id="newsletter" class="section section-bordered">
     <div class="container contact">
       <div>
-        <p class="eyebrow">Get in Touch</p>
-        <h2>Contact</h2>
+        <p class="eyebrow">Stay Updated</p>
+        <h2>Newsletter</h2>
         <p class="lede-sm">For readers, publishers and everyone.</p>
       </div>
 
       <div class="form-card">
-        <form id="contact-form" class="contact-form" novalidate>
-          <div class="field-row">
-            <label>First name<input name="first_name" autocomplete="given-name" required></label>
-            <label>Last name<input name="last_name" autocomplete="family-name"></label>
-          </div>
+        <form id="newsletter-form" class="contact-form" novalidate>
           <label>Email<input type="email" name="email" autocomplete="email" required></label>
-          <label>Message<textarea name="message" rows="6" required></textarea></label>
-          <label class="checkbox"><input type="checkbox" name="newsletter"> Subscribe to my newsletter</label>
           <!-- Honeypot: humans never see or fill this -->
           <div class="hp-field" aria-hidden="true">
             <label>Leave this empty<input name="website" tabindex="-1" autocomplete="off"></label>
           </div>
           <p class="form-error" role="alert" hidden></p>
-          <button type="submit" class="btn btn-primary">Send message</button>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
         <div class="form-success" hidden>
           <p class="success-title">Thank you.</p>
-          <p>Your message has been received. You'll hear back soon.</p>
-          <button type="button" class="text-link as-button" data-reset>Send another</button>
+          <p>You're subscribed. Watch your inbox for news.</p>
+          <button type="button" class="text-link as-button" data-reset>Subscribe another email</button>
         </div>
       </div>
     </div>
@@ -189,7 +183,7 @@
         <a href="#books">Book</a>
         <a href="#about">About</a>
         <!-- <a href="#events">Events</a> -->
-        <a href="#contact">Contact</a>
+        <a href="#newsletter">Newsletter</a>
       </nav>
     </div>
     <p class="copyright">© <span id="year">2026</span> Sebastian Barnes. All rights reserved.</p>

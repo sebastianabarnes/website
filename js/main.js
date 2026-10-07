@@ -40,20 +40,14 @@ const KLAVIYO = {
 /* ---- Footer year ---- */
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* ---- Contact form → Klaviyo ---- */
+/* ---- Newsletter form → Klaviyo ---- */
 (function () {
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById('newsletter-form');
   if (!form) return;
   const success = document.querySelector('.form-success');
   const errorEl = form.querySelector('.form-error');
   const submitBtn = form.querySelector('button[type="submit"]');
   const loadedAt = Date.now();
-
-  // Hide the newsletter opt-in until a Klaviyo list is configured.
-  if (!KLAVIYO.LIST_ID) {
-    const opt = form.newsletter && form.newsletter.closest('label');
-    if (opt) opt.hidden = true;
-  }
 
   function showSuccess() {
     form.hidden = true;
@@ -96,8 +90,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
       return;
     }
 
-    if (!KLAVIYO.PUBLIC_KEY) {
-      showError('The contact form isn’t connected yet. Please check back soon.');
+    if (!KLAVIYO.PUBLIC_KEY || !KLAVIYO.LIST_ID) {
+      showError('The newsletter signup isn’t connected yet. Please check back soon.');
       console.warn('Klaviyo PUBLIC_KEY is not set in js/main.js');
       return;
     }
@@ -106,39 +100,24 @@ document.getElementById('year').textContent = new Date().getFullYear();
       type: 'profile',
       attributes: {
         email: form.email.value.trim(),
-        first_name: form.first_name.value.trim(),
-        last_name: form.last_name.value.trim(),
       },
     };
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
+    submitBtn.textContent = 'Subscribing…';
     try {
-      // 1. Record the message as a Klaviyo event (a Flow can email it to you).
-      await klaviyo('events', {
-        type: 'event',
-        attributes: {
-          properties: { Message: form.message.value.trim() },
-          metric: { data: { type: 'metric', attributes: { name: KLAVIYO.CONTACT_METRIC } } },
-          profile: { data: profile },
-        },
+      await klaviyo('subscriptions', {
+        type: 'subscription',
+        attributes: { profile: { data: profile } },
+        relationships: { list: { data: { type: 'list', id: KLAVIYO.LIST_ID } } },
       });
-
-      // 2. Only subscribe to the newsletter if they ticked the box.
-      if (form.newsletter.checked && KLAVIYO.LIST_ID) {
-        await klaviyo('subscriptions', {
-          type: 'subscription',
-          attributes: { profile: { data: profile } },
-          relationships: { list: { data: { type: 'list', id: KLAVIYO.LIST_ID } } },
-        });
-      }
       showSuccess();
     } catch (err) {
       console.error(err);
-      showError('Something went wrong sending your message. Please try again in a moment.');
+      showError('Something went wrong subscribing. Please try again in a moment.');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send message';
+      submitBtn.textContent = 'Subscribe';
     }
   });
 })();
